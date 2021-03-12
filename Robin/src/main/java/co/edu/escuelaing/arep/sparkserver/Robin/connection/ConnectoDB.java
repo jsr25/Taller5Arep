@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 
 
 public class ConnectoDB {
+
     public String getResult(String valor, String path) {
 
         System.out.println(path + "?datos=" + valor);

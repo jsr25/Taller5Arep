@@ -4,15 +4,18 @@ import co.edu.escuelaing.arep.sparkserver.Robin.util.GeneradorFecha;
 import co.edu.escuelaing.arep.sparkserver.Robin.connection.ConnectoDB;
 import org.json.JSONObject;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static spark.Spark.*;
 
 
 public class SparkWebServer {
-    private static int intento;
-    public static void main(String... args){
-        intento =1;
-        port(getPort());
 
+    private static String[] puertos={"35001","35002","35003"};
+    private static AtomicInteger intento;
+    public static void main(String... args){
+        intento=new AtomicInteger(0);
+        port(getPort());
         get("/", (req,res) ->{
             return "<head>" +
                     "<title> Mensajes</title>" +
@@ -20,7 +23,7 @@ public class SparkWebServer {
                     "<body>" +
                     "<div>" +
                     "<form action=\"/envio\" method=\"get\">" +
-                    "<h4>Ingrese la palabra de desea ingresar<h4>" +
+                    "<h4>Ingrese el mensaje separada por - <h4>" +
                     "<input required name=\"datos\" id=\"datos\" value=\"\">" +
                     "<div>" +
                     "<button> Enviar </button>" +
@@ -29,7 +32,7 @@ public class SparkWebServer {
                     "</div>";
         });
         get("/envio",(req,res)->{
-            String puerto = log(intento);
+            String puerto = log();
             String path ="172.17.0.1:"+puerto+"/envio";
             Dato dato=new Dato(req.queryParams("datos"),GeneradorFecha.fecha());
             ConnectoDB conn = new ConnectoDB();
@@ -45,18 +48,12 @@ public class SparkWebServer {
             for(String c:datoss){
                 String[] fel = c.split("/");
                 tb=tb+"<tr>" +
-                        " <td>"+fel[0]+"</td>" +
+                        " <td>"+fel[0].replace("-"," ")+"</td>" +
                         " <td>"+fel[1]+"</td>" +
                         "  </tr>";
 
 
             }
-
-
-//            System.out.println(data);
-//            String table="";
-//            for(int i=0;i)
-
             return "<div>" +
                     "" +
                     "<p>los datos resgitrados en la base de datos son</p>" +
@@ -87,11 +84,19 @@ public class SparkWebServer {
         return 4567;
     }
 
-    private static String log(int val){
-        return "35001";
+    private static String log(){
+        String port=puertos[intento.get()];;
+        if(intento.get()==0){
+            intento=new AtomicInteger(1);
+        }
+        else if(intento.get()==1){
+            intento=new AtomicInteger(2);
+        }
+        else{
+            intento=new AtomicInteger(0);
+        }
+        return port;
     }
 
-    private static String formatData(String data){
-        return "";
-    }
+
 }

@@ -9,7 +9,7 @@ services:
       - web
     container_name: robin
     ports:
-      - "8080:6000"
+      - "80:6000"
   web:
     build:
       context: ./LogService
@@ -19,6 +19,8 @@ services:
     container_name: logserv
     ports:
       - "35001:6000"
+      - "35002:6000"
+      - "35003:6000"
   db:
     image: mongo:latest
     container_name: mongo-docker-database
