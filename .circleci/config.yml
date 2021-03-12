@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  maven: circleci/maven@1.1
+  
+jobs:
+  test:
+    machine:
+      image: ubuntu-1604:202007-01
+    steps:
+      - run: git clone https://github.com/jsr25/Taller5Arep.git
+      - run: cd Taller5Arep
+      - run: mvn test -f Taller5Arep/LogService/pom.xml
+      - run: mvn test -f Taller5Arep/Robin/pom.xml
+
+workflows:
+  maven_test:
+    jobs:
+      - test
