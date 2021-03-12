@@ -1,4 +1,4 @@
-# Taller Cliente Y Servicios
+# TALLER DE DE MODULARIZACIÓN CON VIRTUALIZACIÓN E INTRODUCCIÓN A DOCKER Y A AWS
 
 ## Autor: Juan Sebastian Ramos Isaza
 
