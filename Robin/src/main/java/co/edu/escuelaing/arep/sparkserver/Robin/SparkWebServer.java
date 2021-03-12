@@ -2,6 +2,7 @@ package co.edu.escuelaing.arep.sparkserver.Robin;
 import co.edu.escuelaing.arep.sparkserver.Robin.entity.Dato;
 import co.edu.escuelaing.arep.sparkserver.Robin.util.GeneradorFecha;
 import co.edu.escuelaing.arep.sparkserver.Robin.connection.ConnectoDB;
+import org.json.JSONObject;
 
 import static spark.Spark.*;
 
@@ -34,6 +35,28 @@ public class SparkWebServer {
             ConnectoDB conn = new ConnectoDB();
             String data =conn.getResult(req.queryParams("datos"),path);
 
+
+            String[] datoss=data.split(",");
+
+            String tb="<tr>" +
+                    " <th>Mensaje</td>" +
+                    " <th>Fecha</td>" +
+                    "  </tr>";
+            for(String c:datoss){
+                String[] fel = c.split("/");
+                tb=tb+"<tr>" +
+                        " <td>"+fel[0]+"</td>" +
+                        " <td>"+fel[1]+"</td>" +
+                        "  </tr>";
+
+
+            }
+
+
+//            System.out.println(data);
+//            String table="";
+//            for(int i=0;i)
+
             return "<div>" +
                     "" +
                     "<p>los datos resgitrados en la base de datos son</p>" +
@@ -41,7 +64,12 @@ public class SparkWebServer {
                     "</div>" +
                     "" +
                     "<div>" +
-                    data +
+                    "<table class=\"default\">" +
+                    "" +
+                    tb +
+                    "" +
+                    "</table>" +
+
                     "</div>" +
                     "<div>" +
                     "<form action=\"/\" method=\"get\">" +

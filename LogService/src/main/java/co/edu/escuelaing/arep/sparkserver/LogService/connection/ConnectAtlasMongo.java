@@ -73,30 +73,32 @@ public class ConnectAtlasMongo {
 
     private String process(List<String> datos,List<String> fecha){
         List<List<String>> list=new ArrayList<>();
-        String json="[";
+        String json="";
         if(datos.size()<10){
             for(int i=0;i<datos.size();i++){
+
                 if(i!=datos.size()-1){
-                    json=json+"{\"dato\":\""+datos.get(i)+"\",\"fecha\":\""+fecha.get(i)+"\"},";
+                    json=json+datos.get(i)+"/"+fecha.get(i)+",";
 
                 }
                 else{
-                    json=json+"{\"dato\":\""+datos.get(i)+"\",\"fecha\":\""+fecha.get(i)+"\"}";
+                    json=json+datos.get(i)+"/"+fecha.get(i);
                 }
             }
 
         }
         else{
             for(int i=datos.size()-10;i<datos.size();i++){
+
                 if(i!=datos.size()-1){
-                    json=json+"{\"dato\":\""+datos.get(i)+"\",\"fecha\":\""+fecha.get(i)+"\"},";
+                    json=json+datos.get(i)+"/"+fecha.get(i)+",";
                 }
                 else{
-                    json=json+"{\"dato\":\""+datos.get(i)+"\",\"fecha\":\""+fecha.get(i)+"\"}";
+                    json=json+datos.get(i)+"/"+fecha.get(i);
                 }
             }
         }
-        json=json+"]";
+        json=json+"";
         System.out.println(json);
         return json;
     }
