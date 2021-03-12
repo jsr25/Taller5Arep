@@ -43,7 +43,7 @@ Para el uso de esta aplicación se necesitan tener instalados los siguientes com
 
 ### Arquitectura General
 
-
+![](./img/Arquitectura.png)
 
 ### Ejecucion
 Actualmente la aplicación se encuentra montada en AWS, si desea probarla puede hacerlo otra vez desde la siguiente URL:
