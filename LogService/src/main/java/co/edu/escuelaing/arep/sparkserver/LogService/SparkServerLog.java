@@ -27,8 +27,8 @@ public class SparkServerLog {
         });
 
         get("/data",(req,res)->{
-            CoonectMongo connectMongo = new CoonectMongo();
-            String json = connectMongo.get();
+            ConnectAtlasMongo connectMongo = new ConnectAtlasMongo();
+            String json = connectMongo.getCollection();
             return json;
         });
     }
