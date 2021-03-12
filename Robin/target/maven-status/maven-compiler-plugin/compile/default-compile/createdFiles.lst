@@ -1,0 +1,4 @@
+co\edu\escuelaing\arep\sparkserver\Robin\connection\ConnectoDB.class
+co\edu\escuelaing\arep\sparkserver\Robin\util\GeneradorFecha.class
+co\edu\escuelaing\arep\sparkserver\Robin\entity\Dato.class
+co\edu\escuelaing\arep\sparkserver\Robin\SparkWebServer.class

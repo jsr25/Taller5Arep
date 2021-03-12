@@ -1,0 +1,40 @@
+version: '3.3'
+
+services:
+  loadbalancer:
+    build:
+      context: ./Robin
+      dockerfile: Dockerfile
+    depends_on:
+      - web
+    container_name: robin
+    ports:
+      - "8080:6000"
+  web:
+    build:
+      context: ./LogService
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    container_name: logserv
+    ports:
+      - "35001:6000"
+  db:
+    image: mongo:latest
+    container_name: mongo-docker-database
+    environment:
+      MONGO_INITDB_DATABASE: lab5
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+    ports:
+      - 27017:27017
+
+    command: mongod
+
+volumes:
+  mongodb:
+  mongodb_config:
