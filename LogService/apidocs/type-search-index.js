@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"co.edu.escuelaing.arep.sparkserver.LogService.connection","l":"ConnectAtlasMongo"},{"p":"co.edu.escuelaing.arep.sparkserver.LogService.util","l":"GeneradorFecha"},{"p":"co.edu.escuelaing.arep.sparkserver.LogService","l":"SparkServerLog"}]

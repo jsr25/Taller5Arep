@@ -1,11 +1,15 @@
 package co.edu.escuelaing.arep.sparkserver.LogService;
 
 import co.edu.escuelaing.arep.sparkserver.LogService.connection.ConnectAtlasMongo;
-import co.edu.escuelaing.arep.sparkserver.LogService.connection.CoonectMongo;
 
 
 import static spark.Spark.*;
 
+/**
+ * Autor Juan Ramos
+ *
+ * Controlador de la parte web con la base de datos
+ */
 public class SparkServerLog {
 
     public static void main(String[] args) {

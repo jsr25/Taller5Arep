@@ -5,6 +5,12 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ *
+ * Autor Juan Ramos
+ *
+ * Clase que genera la fecha
+ */
 public class GeneradorFecha {
     private static final String DATE_FORMAT = "dd-M-yyyy hh:mm:ss ";
 

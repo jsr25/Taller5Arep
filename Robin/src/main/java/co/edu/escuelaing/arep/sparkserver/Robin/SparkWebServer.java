@@ -8,7 +8,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static spark.Spark.*;
 
-
+/**
+ * Autor Juan Ramos
+ *
+ * Clase que controla la aplicacion
+ */
 public class SparkWebServer {
 
     private static String[] puertos={"35001","35002","35003"};

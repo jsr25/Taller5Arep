@@ -10,6 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
+/**
+ * Autor Juan Ramos
+ *
+ * Clase que controla la connexion con el logService
+ */
 public class ConnectoDB {
 
     public String getResult(String valor, String path) {

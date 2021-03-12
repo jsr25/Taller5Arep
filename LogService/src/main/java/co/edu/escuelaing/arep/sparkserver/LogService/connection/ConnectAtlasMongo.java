@@ -14,8 +14,12 @@ import org.bson.types.ObjectId;
 import java.util.ArrayList;
 import java.util.List;
 
-;
 
+/**
+ * Autor Juan Ramos
+ *
+ * Clase que controla la conexion con la base de datos mongo
+ */
 public class ConnectAtlasMongo {
 
     private MongoCollection<Document> collection;

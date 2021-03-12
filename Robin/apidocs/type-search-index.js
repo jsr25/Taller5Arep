@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"co.edu.escuelaing.arep.sparkserver.Robin.connection","l":"ConnectoDB"},{"p":"co.edu.escuelaing.arep.sparkserver.Robin.entity","l":"Dato"},{"p":"co.edu.escuelaing.arep.sparkserver.Robin.util","l":"GeneradorFecha"},{"p":"co.edu.escuelaing.arep.sparkserver.Robin","l":"SparkWebServer"}]

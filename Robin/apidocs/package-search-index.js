@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"co.edu.escuelaing.arep.sparkserver.Robin"},{"l":"co.edu.escuelaing.arep.sparkserver.Robin.connection"},{"l":"co.edu.escuelaing.arep.sparkserver.Robin.entity"},{"l":"co.edu.escuelaing.arep.sparkserver.Robin.util"}]
